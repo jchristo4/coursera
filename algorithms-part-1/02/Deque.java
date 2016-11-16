@@ -1,4 +1,3 @@
-
 import java.util.Iterator;
 
 /**
@@ -12,19 +11,21 @@ public class Deque<Item> implements Iterable<Item> {
     private Node last;      // pointer to last item in the deque
     private int size;       // number of items in the deque
 
-
     private class Node {
-        Item item;
-        Node next;
-        Node prev;
+        private Item item;
+        private Node next;
+        private Node prev;
     }
-
 
     /**
      * An iterator for Deque data structure
      */
     private class DequeIterator implements Iterator<Item> {
-        private Node ptr = first;
+        private Node ptr;
+
+        public DequeIterator(Node first) {
+            ptr = first;
+        }
 
         public boolean hasNext() {
             return ptr != null;
@@ -47,13 +48,11 @@ public class Deque<Item> implements Iterable<Item> {
         }
     }
 
-
     public Deque() {
         first = null;
         last = null;
         size = 0;
     }
-
 
     /**
      * Is this deque empty?
@@ -63,15 +62,13 @@ public class Deque<Item> implements Iterable<Item> {
         return size == 0;
     }
 
-
     /**
      * Returns the number of items in the deque.
-     * @return the number of items in the degue
+     * @return the number of items in the deque
      */
     public int size() {
         return size;
     }
-
 
     /**
      * Adds an item to this deque from front of the data structure.
@@ -101,7 +98,6 @@ public class Deque<Item> implements Iterable<Item> {
         ++size;
     }
 
-
     /**
      * Adds an item to this deque from back of the data structure.
      * @param item the item to add
@@ -130,7 +126,6 @@ public class Deque<Item> implements Iterable<Item> {
         ++size;
     }
 
-
     /**
      * Removes and returns an item from front of this deque.
      * @return item that is front in the deque
@@ -155,7 +150,6 @@ public class Deque<Item> implements Iterable<Item> {
 
         return item;
     }
-
 
     /**
      * Removes and returns an item from back of this deque.
@@ -182,15 +176,13 @@ public class Deque<Item> implements Iterable<Item> {
         return item;
     }
 
-
     /**
      * Returns an iterator to this deque that iterates through the items.
      * @return an iterator to this deque that iterates through the items
      */
     public Iterator<Item> iterator() {
-        return new DequeIterator();
+        return new DequeIterator(first);
     }
-
 
     /**
      * Unit tests the {@code Deque} data type.
