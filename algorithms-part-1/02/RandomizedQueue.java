@@ -187,6 +187,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
+        /*
         RandomizedQueue<Integer> rq = new RandomizedQueue<Integer>();
 
         for (int i = 1; i <= 5; i++) {
@@ -206,7 +207,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         for (int i : rq) {
             System.out.println(i);
         }
-
+        */
     }
 
 }

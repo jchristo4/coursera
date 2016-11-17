@@ -190,7 +190,27 @@ public class Deque<Item> implements Iterable<Item> {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
+        /*
+        Deque<Integer> d = new Deque<Integer>();
 
+        for (int i = 1; i <= 10; i += 2) {
+            d.addFirst(i);
+            d.addLast(i + 1);
+        }
+
+        for (int i : d) {
+            System.out.println(i);
+        }
+
+        System.out.println("removed from front: " + d.removeFirst());
+        System.out.println("removed from last: " + d.removeLast());
+        System.out.println("removed from front: " + d.removeFirst());
+        System.out.println("removed from last: " + d.removeLast());
+
+        for (int i : d) {
+            System.out.println(i);
+        }
+        */
     }
 
 }
